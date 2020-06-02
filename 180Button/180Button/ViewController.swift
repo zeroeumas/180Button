@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var phone: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,12 @@ class ViewController: UIViewController {
            button.titleLabel?.font = .systemFont(ofSize: 40)
            self.view.addSubview(button)
        }
-
+    
+    @objc func call(sender: UIButton!) {
+         if let url = URL(string: "tel://\(phone)"),
+             UIApplication.shared.canOpenURL(url) {
+             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+         }
+     }
 }
 
