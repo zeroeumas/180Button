@@ -24,6 +24,7 @@ class ViewController: UIViewController {
            button.setTitle("Call", for: UIControl.State.normal)
            button.setTitleColor(.white, for: UIControl.State.normal)
            button.titleLabel?.font = .systemFont(ofSize: 40)
+           button.addTarget(self, action: #selector(call(sender:)), for: UIControl.Event.touchDown)
            self.view.addSubview(button)
        }
     
